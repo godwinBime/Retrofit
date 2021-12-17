@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/layoutMain_id"
-    android:padding="16dp"
-    tools:context=".MainActivity">
+    android:padding="15dp"
+    >
 
+    <!--de.hdodenhof.circleimageview.CircleImageView-->
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgSummaryPlayerProfilePictureID"
         android:layout_width="130dp"
