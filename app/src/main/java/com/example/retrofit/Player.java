@@ -4,13 +4,17 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Player {
+    @SerializedName("id")
+    @Expose
+    private String id;
+
     @SerializedName("picture_url")
     @Expose
-    private String profilePicture;
+    private String detailProfilePicture;
 
     @SerializedName("name")
     @Expose
-    private String name;
+    private String detailName;
 
     @SerializedName("club")
     @Expose
@@ -20,6 +24,9 @@ public class Player {
     @Expose
     private String gender;
 
+    @SerializedName("dob")
+    @Expose
+    private String dob;
 
     @SerializedName("site")
     @Expose
@@ -29,40 +36,44 @@ public class Player {
     @Expose
     private String origin;
 
-    public void setProfilePicture(String profilePicture){
-        this.profilePicture = profilePicture;
+    @SerializedName("status")
+    @Expose
+    private String status;
+
+    public String getDetailsId(){
+        return id;
     }
 
-    public String getProfilePicture(){
-        return profilePicture;
+    public String getDetailProfilePicture(){
+        return detailProfilePicture;
     }
 
-    public void setPlayerName(String name){
-        this.name = name;
-    }
-
-    public String getPlayerName(){
-        return name;
-    }
-
-    public void setClub(String club){
-        this.club = club;
+    public String getDetailPlayerName(){
+        return detailName;
     }
 
     public String getClub(){
         return club;
     }
 
-    public void setSite(String site){
-        this.site = site;
-    }
-
     public String getSite(){
         return site;
     }
 
-    public void setOrigin(String origin){
-        this.origin = origin;
+    public String getGender(){
+        return gender;
+    }
+
+    public String getDOB(){
+        return dob;
+    }
+
+    public String getStatus(){
+        return status;
+    }
+
+    public String getOrigin(){
+        return origin;
     }
 }
 
