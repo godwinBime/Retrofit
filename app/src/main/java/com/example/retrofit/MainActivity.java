@@ -4,12 +4,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -19,11 +21,13 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
     private static final String LOG_TAG = PlayerDetails.class.getSimpleName();
     public static final String PLAYER_PROFILE = "player_profile";
     private CircleImageView imgProfilePicture;
     private TextView txtPlayerName;
+    private ArrayList<String> arrayListID;
+    private int clickedID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +42,14 @@ public class MainActivity extends AppCompatActivity {
         playerNameClickListener();
     }
 
+    public int myActiveID(){
+        System.out.println("Clicked ID: ");
+        return 0;
+    }
+
     public void playerNameClickListener(){
         txtPlayerName.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, PlayerDetails.class)));
+        Log.d(LOG_TAG, "Clicked Text ID>>><< " + R.id.txtSummaryPlayerId);
     }
 
     private void getProfiles(){
@@ -63,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
                     String content = "";
                     content = playerProfile.getSummaryPlayerName() + "\n\n";
                     txtPlayerName.append(content);
-                    Log.d(LOG_TAG, "Nothing found?: " + txtPlayerName.getText());
+
                 }
             }
 
@@ -72,5 +82,6 @@ public class MainActivity extends AppCompatActivity {
                 txtPlayerName.setText(t.getMessage());
             }
         });
+
     }
 }

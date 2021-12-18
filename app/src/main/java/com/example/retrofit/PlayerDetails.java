@@ -63,15 +63,15 @@ public class PlayerDetails extends AppCompatActivity {
                 }
                 List<Player> detailPlayerProfile = response.body();
                 for (Player detailPlayer : detailPlayerProfile){
-                    if (detailPlayer.getDetailsId().equals("8")){
+                    if (detailPlayer.getDetailsId() == 8){
                         String froName = "";
-                        froName += "Name:\t"  + detailPlayer.getDetailPlayerName() +
-                                "\nGender: " + detailPlayer.getGender() +
-                                "\nClub:   "   + detailPlayer.getClub() +
-                                "\nSite:   "   + detailPlayer.getSite() +
-                                "\nDOB:    "    + detailPlayer.getDOB() +
-                                "\nOrigin: " + detailPlayer.getOrigin() +
-                                "\nStatus: " + detailPlayer.getStatus();
+                        froName += "Name:\t\t\t"  + detailPlayer.getDetailPlayerName() +
+                                "\nGender:\t" + detailPlayer.getGender() +
+                                "\nClub: \t\t "   + detailPlayer.getClub() +
+                                "\nSite:  \t\t\t "   + detailPlayer.getSite() +
+                                "\nDOB:    \t\t"    + detailPlayer.getDOB() +
+                                "\nOrigin: \t\t" + detailPlayer.getOrigin() +
+                                "\nStatus: \t\t" + detailPlayer.getStatus();
                         txtDetailPlayerName.append(froName);
                     }
                 }

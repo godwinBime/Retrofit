@@ -4,9 +4,9 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class PlayerProfile {
-    @SerializedName("userID")
+    @SerializedName("id")
     @Expose
-    private String userID;
+    private int userID;
 
     @SerializedName("picture_url")
     @Expose
@@ -16,7 +16,7 @@ public class PlayerProfile {
     @Expose
     private String name;
 
-    public String getProfileUserID(){
+    public int getProfileUserID(){
         return userID;
     }
 

@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 public class Player {
     @SerializedName("id")
     @Expose
-    private String id;
+    private int id;
 
     @SerializedName("picture_url")
     @Expose
@@ -40,7 +40,7 @@ public class Player {
     @Expose
     private String status;
 
-    public String getDetailsId(){
+    public int getDetailsId(){
         return id;
     }
 
