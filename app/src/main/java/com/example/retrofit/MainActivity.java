@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity{
     private TextView txtPlayerName;
     private ArrayList<String> arrayListID;
     private int clickedID;
+    private String playerID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,12 +40,18 @@ public class MainActivity extends AppCompatActivity{
         Snackbar.make(findViewById(R.id.layoutMain_id), "Select a Name to view player profile.", Snackbar.LENGTH_LONG).show();
 
         getProfiles();
-        playerNameClickListener();
+        myActiveID();
     }
 
-    public int myActiveID(){
-        System.out.println("Clicked ID: ");
-        return 0;
+    public void myActiveID(){
+        txtPlayerName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                playerID = view.getResources().getResourceName(view.getId());
+            }
+        });
+        System.out.println("Clicked Name: " + txtPlayerName.getText().toString());
+        playerNameClickListener();
     }
 
     public void playerNameClickListener(){
@@ -72,8 +79,8 @@ public class MainActivity extends AppCompatActivity{
                 for (PlayerProfile playerProfile : playerProfiles){
                     String content = "";
                     content = playerProfile.getSummaryPlayerName() + "\n\n";
-                    txtPlayerName.append(content);
 
+                    txtPlayerName.append(content);
                 }
             }
 

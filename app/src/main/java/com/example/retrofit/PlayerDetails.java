@@ -63,7 +63,7 @@ public class PlayerDetails extends AppCompatActivity {
                 }
                 List<Player> detailPlayerProfile = response.body();
                 for (Player detailPlayer : detailPlayerProfile){
-                    if (detailPlayer.getDetailsId() == 8){
+                    if (detailPlayer.getDetailsId() == 2){
                         String froName = "";
                         froName += "Name:\t\t\t"  + detailPlayer.getDetailPlayerName() +
                                 "\nGender:\t" + detailPlayer.getGender() +
